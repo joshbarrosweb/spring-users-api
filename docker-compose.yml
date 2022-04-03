@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  mongo-users-api:
+    container_name: mongo-users-api
+    image: mongo
+    volumes:
+      - ./.docker/mongodb:/data/db
+    ports:
+      - 27017:27017
+    logging:
+      options:
+        max-size: 10m
+        max-file: '3'
